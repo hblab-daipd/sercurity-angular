@@ -1,0 +1,9 @@
+
+<div class class="main-content">
+<h2>xin chao: {{user.username}}</h2>
+  <div class class="col-auto" *ngFor="let menu of menu">
+  <button type="button" class="btn btn-primary"  name={{menu.id}} (click)="onSubmit(menu.menuName)">{{menu.menuName}}</button>
+<br>
+<br>
+</div>
+</div>

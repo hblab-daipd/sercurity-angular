@@ -1,0 +1,15 @@
+<button class="btn btn-primary" type="button" (click)=addMenu()>Add Menu</button>
+<table class="table table-bordered table-striped" >
+  <tr>
+  <th scope="col">id</th>
+  <th scope="col">menu name</th>
+
+  </tr>
+  <tr *ngFor="let menu of menu">
+  <td>{{menu.id}}</td>
+  <td>{{menu.menuName}}</td>
+  <button class="btn btn-success" type="button" (click)=editMenu(menu.id)>edit</button>
+  <button class="btn btn-danger" type="button" (click)=deleteMenu(menu.id)>delete</button>
+  </tr>
+  </table>
+

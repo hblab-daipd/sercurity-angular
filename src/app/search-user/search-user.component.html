@@ -1,0 +1,15 @@
+<table class="table table-bordered table-striped" >
+  <tr>
+  <th scope="col">id</th>
+  <th scope="col">name</th>
+  <th scope="col">password</th>
+  </tr>
+  <tr *ngFor="let user of user">
+  <td>{{user.id}}</td>
+  <td>{{user.username}}</td>
+  <td>{{user.password}}</td>
+  <button type="button" class="btn btn-success" (click)=editUser(user.id)>edit</button>
+  <button type="button" class="btn btn-danger" (click)=deleteUser(user.id)>delete</button>
+  </tr>
+  </table>
+

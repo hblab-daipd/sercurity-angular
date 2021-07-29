@@ -1,0 +1,59 @@
+<div id="container">
+  <div class="card text-center">
+
+    <div class="card-header">
+      <h2>Update student</h2>
+    </div>
+  </div>
+
+  <h2 style="color: red;">{{error}}</h2>
+  <form (ngSubmit)="onSubmit()">
+    <div class="card-footer text-muted">
+      <input class="btn btn-primary" type="submit" value="Update User" />
+    </div>
+    <div class="col-sm-10">
+      <input
+        type="hidden"
+        class="form-control"
+        name="id"
+        id="id"
+        [(ngModel)]="user.id"
+      />
+    </div>
+    <div class="card-body">
+      <div class="form-group row">
+        <label for="name" class="col-sm-2 col-form-label">username:</label>
+
+        <div class="col-sm-10">
+          <input
+            type="text"
+            class="form-control"
+            name="name"
+            id="name"
+            [(ngModel)]="user.username"
+            placeholder="username"
+          />
+        </div>
+      </div>
+      <div class="form-group row">
+        <label for="age" class="col-sm-2 col-form-label">Password:</label>
+        <div class="col-sm-10">
+          <input
+            type="hidden"
+            class="form-control"
+            name="age"
+            id="age"
+            [(ngModel)]="user.password"
+            placeholder="password"
+          />
+        </div>
+      </div>
+    </div>
+  </form>
+</div>
+<div class="form-check" *ngFor="let role of role">
+  <input type="checkbox" [(ngModel)]="role.isCheck" id="{{ role.id }}" />
+  <label for="{{ role.id }}">
+    {{ role.name }}
+  </label>
+</div>

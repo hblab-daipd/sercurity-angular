@@ -1,0 +1,42 @@
+<div id="container">
+  <div class="card text-center">
+
+    <div class="card-header">
+      <h2>Update Menu</h2>
+    </div>
+  </div>
+
+
+  <form (ngSubmit)="onSubmit()">
+    <div class="card-footer text-muted">
+      <input class="btn btn-primary" type="submit" value="Update User" />
+    </div>
+    <div class="col-sm-10">
+      <input
+        type="hidden"
+        class="form-control"
+        name="id"
+        id="id"
+        [(ngModel)]="menu.id"
+      />
+    </div>
+    <div class="card-body">
+      <div class="form-group row">
+        <label for="name" class="col-sm-2 col-form-label">Menu Name:</label>
+
+        <div class="col-sm-10">
+          <input
+            type="text"
+            class="form-control"
+            name="name"
+            id="name"
+            [(ngModel)]="menu.menuName"
+            placeholder="menu name"
+          />
+        </div>
+      </div>
+    </div>
+  </form>
+</div>
+
+

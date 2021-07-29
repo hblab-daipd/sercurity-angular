@@ -1,0 +1,36 @@
+<form method="POST">
+  <div class="row g-3 align-items-center">
+    <div class="col-auto">
+      <label class="col-form-label"> username </label>
+    </div>
+    <div class="col-auto">
+
+      <nav class="navbar navbar-light bg-light">
+        <div class="container-fluid">
+          <form class="d-flex">
+            <input class="form-control me-2" type="search"  placeholder="nhap username"
+            [(ngModel)]="userr.username" [ngModelOptions]="{standalone: true}">
+            <button class="btn btn-outline-success" type="submit" (click)="search(userr.username)" >Search</button>
+          </form>
+        </div>
+      </nav>
+    </div>
+  </div>
+</form>
+
+<button type="button" class="btn btn-primary" (click)=addUser()>Add User</button>
+<table class="table table-bordered table-striped" >
+  <tr>
+  <th scope="col">id</th>
+  <th scope="col">name</th>
+  <th scope="col">password</th>
+  </tr>
+  <tr *ngFor="let user of user">
+  <td>{{user.id}}</td>
+  <td>{{user.username}}</td>
+  <td>{{user.password}}</td>
+  <button type="button" class="btn btn-success" (click)=editUser(user.id)>edit</button>
+  <button type="button" class="btn btn-danger" (click)=deleteUser(user.id)>delete</button>
+  </tr>
+  </table>
+

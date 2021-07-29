@@ -1,0 +1,15 @@
+
+<button type="button" class="btn btn-primary" (click)=addRole()>Add Role</button>
+<table class="table table-bordered table-striped" >
+  <tr>
+  <th scope="col">id</th>
+  <th scope="col">name</th>
+
+  </tr>
+  <tr *ngFor="let role of role">
+  <td>{{role.id}}</td>
+  <td>{{role.name}}</td>
+  <button type="button" class="btn btn-success" (click)=editRole(role.id)>edit</button>
+  <button type="button" class="btn btn-danger" (click)=deleteRole(role.id)>delete</button>
+  </tr>
+  </table>

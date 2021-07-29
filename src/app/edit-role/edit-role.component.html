@@ -1,0 +1,46 @@
+<div id="container">
+  <div class="card text-center">
+    <div class="card-header">
+      <h2>Update Role</h2>
+    </div>
+  </div>
+
+
+  <form (ngSubmit)="onSubmit()">
+    <div class="card-footer text-muted">
+      <input class="btn btn-primary" type="submit" value="Update Role" />
+    </div>
+    <div class="col-sm-10">
+      <input
+        type="hidden"
+        class="form-control"
+        name="id"
+        id="id"
+        [(ngModel)]="role.id"
+      />
+    </div>
+    <div class="card-body">
+      <div class="form-group row">
+        <label for="name" class="col-sm-2 col-form-label">Role name:</label>
+
+        <div class="col-sm-10">
+          <input
+            type="text"
+            class="form-control"
+            name="name"
+            id="name"
+            [(ngModel)]="role.name"
+            placeholder="Role name"
+          />
+        </div>
+      </div>
+    </div>
+  </form>
+</div>
+<div class="form-check" *ngFor="let menu of menu">
+  <input type="checkbox" [(ngModel)]="menu.isCheck" id="{{ menu.id }}" />
+  <label for="{{ menu.id }}">
+    {{ menu.menuName }}
+  </label>
+</div>
+
